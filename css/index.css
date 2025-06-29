@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --darkColor: #19283f;
+  --greenColor: #33d1cc;
+  --whiteColor: #fff;
+  --yellowColor: #ffc400;
+  --redColor: #ff3150;
+  --numberColor: #eff7fa;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.main-title::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 2px;
+  background-color: var(--greenColor);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* Section 1: Navbar */
+.navbar {
+  background-color: var(--darkColor);
+  position: sticky;
+}
+.navbar .nav-item .nav-link {
+  color: var(--whiteColor) !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-link:hover{
+  color: var(--greenColor) !important;
+}
+.navbar .search {
+  border-left: 2px solid var(--greenColor);
+}
+.navbar .search svg {
+  color: var(--greenColor);
+  cursor: pointer;
+}
+.navbar .navbar-toggler {
+  font-size: 25px;
+  color: var(--whiteColor);
+}
+.navbar .main-btn {
+  font-weight: 600;
+}
+/* Section 2: Lnding */
+.landing {
+  background-color: var(--darkColor);
+  min-height: calc(100vh - 72px);
+  color: var(--whiteColor);
+}
+.landing .btn {
+  font-weight: 600;
+}
+/* Section 3: Features */
+.features .feat h3 {
+  font-weight: 600;
+}
+.features .icon-holder {
+  height: 200px;
+}
+.features .icon-holder svg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.features .icon-holder .number {
+  font-size: 12rem;
+  color: var(--numberColor);
+}
+.features .icon-holder .icon {
+  color: var(--greenColor);
+}
+/* Section 4: Our Work */
+.our-work {
+  background-color: var(--numberColor);
+}
+.our-work .box {
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.our-work .box::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: rgba(51, 209, 204, 0.85);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: 0.3s all;
+}
+
+.our-work .box:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Section 5: Stuff */
+.stuff .description {
+  max-width: 500px;
+}
+
+/* Responsive styling for the laptop image in the Stuff section */
+.stuff .images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px 0;
+}
+
+.stuff .images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.3s;
+}
+
+.stuff .images img:hover {
+  transform: scale(1.03);
+}
+
+/* On small screens, add extra margin for spacing */
+@media (max-width: 767.98px) {
+  .stuff .images {
+    padding: 10px 0 30px 0;
+  }
+  .stuff .images img {
+    max-width: 90vw;
+  }
+}
+
+/* Section 6: Meet the Team */
+.team {
+  background-color: var(--numberColor);
+}
+.team h2 {
+  font-size: 3rem;
+}
+.team .box {
+  cursor: pointer;
+  transition: 0.3s all;
+  box-shadow: 0 2px 8px rgba(25, 40, 63, 0.08);
+  border-radius: 12px;
+}
+
+.team .box:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 8px 24px rgba(51, 209, 204, 0.18);
+  border-color: var(--greenColor);
+}
+/* Section 8: Projects */
+.project {
+  background-color: var(--darkColor);
+}
+/* Section 9: Read our Blog */
+/* Section 10: Subscribe */
+.subscribe {
+  background-color: var(--yellowColor);
+}
+.subscribe input[type="text"] {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--whiteColor);
+  color: white;
+}
+.subscribe::placeholder {
+  color: white;
+  font-size: 25px;
+}
+@media (max-width: 767.98px) {
+  .subscribe input[type="submit"] {
+    margin-top: 1.5rem;
+  }
+}
+/* Section 11: Footer */
+
+.footer {
+  background-color: var(--darkColor);
+}
+.copyright p:first-child span{
+  color: var(--greenColor);
+  font-weight: 600;
+}
+.copyright p:nth-child(2) span {
+  color: var(--yellowColor);
+  font-weight: 600;
+}
+
+.social-link:hover {
+  background: #0d6efd;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+  text-decoration: none;
+}
+
+.social-link i {
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
